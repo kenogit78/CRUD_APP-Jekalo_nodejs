@@ -21,7 +21,7 @@ app.use(router)
 
 const startAPI = () => {
     const server = http.createServer(app)
-    server.listen(process.env.PORT, (err) => {
+    server.listen(config.port, (err) => {
         if (err) {
             console.log(`API could not be start`, err)
             process.exit(-1)
