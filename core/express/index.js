@@ -19,6 +19,10 @@ app.use(bodyParser.json({limit: '50mb', verify: rawBodySaver}))
 app.use(bodyParser.urlencoded({limit: '50mb', verify: rawBodySaver, extended: false}))
 app.use(router)
 
+app.get('/', (req, res) => {
+    return res.send('API is Running...')
+})
+
 const startAPI = () => {
     const server = http.createServer(app)
     server.listen(config.port, (err) => {
